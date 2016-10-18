@@ -30,6 +30,6 @@ cd ..
 python id-service/server.py &
 
 # run gala-serve
-gala-serve sample_B_20160708_frags_46_50.hdf -f config.json &
+gala-serve $VOLUME -f config.json &
 
 # run bigcat

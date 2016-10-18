@@ -23,18 +23,14 @@ cd ..
 # clone bigcat
 if ! [ -d bigcat ]
 then
-  git clone https://github.com/saalfeldlab/bigcat.git
-fi
-cd bigcat
-if ! [ `git rev-parse --abbrev-ref HEAD` == "$BIGCAT_BRANCH" ]
-then
-  git checkout -t $BIGCAT_BRANCH
+  git clone -b $BIGCAT_BRANCH https://github.com/saalfeldlab/bigcat.git
 fi
 
 # build
-mvn clean install
+cd bigcat
+mvn install
 mvn dependency:build-classpath -Dmdep.outputFile=cp.txt
-
+cd ..
 
 ### RUN
 

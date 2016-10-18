@@ -1,7 +1,7 @@
 
 BIGCAT_BRANCH=remote-client
 ID_SERVICE_BRANCH=master
-GALA_BRANCH=master
+GALA_BRANCH=easy-launch
 CONDA_ENV_NAME=bigcat-launch
 
 ### DOWNLOAD AND INSTALL

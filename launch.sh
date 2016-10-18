@@ -19,6 +19,7 @@ cd gala
 conda env create -n $CONDA_ENV_NAME
 source activate $CONDA_ENV_NAME
 pip install -e .
+cd ..
 
 ### RUN
 

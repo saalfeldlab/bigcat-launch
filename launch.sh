@@ -71,6 +71,7 @@ GALA_SERVICE_PID=$!
 java -Xmx3g -cp `< bigcat/cp.txt`:$HOME/.m2/repository/sc/fiji/bigcat/0.0.1-SNAPSHOT/bigcat-0.0.1-SNAPSHOT.jar \
   bdv.bigcat.BigCatRemoteClient \
   -i $VOLUME \
+  -l /volumes/labels/fragments \
   -b config.json
 
 kill $ID_SERVICE_PID

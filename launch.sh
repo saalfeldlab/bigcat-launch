@@ -48,6 +48,16 @@ cd ..
 if ! [ -d bigcat ]
 then
   git clone -b $BIGCAT_BRANCH https://github.com/saalfeldlab/bigcat.git
+else
+  cd bigcat
+  if ! [ `git rev-parse --verify $BIGCAT_BRANCH` ]; then
+    git fetch origin $BIGCAT_BRANCH
+    git checkout --track origin/$BIGCAT_BRANCH
+  else
+    git checkout $BIGCAT_BRANCH
+    git pull origin $BIGCAT_BRANCH
+  fi
+  cd ..
 fi
 
 # build

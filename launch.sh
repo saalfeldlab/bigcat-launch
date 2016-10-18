@@ -9,11 +9,30 @@ VOLUME=bigcat/data/sample_B_20160708_frags_46_50.hdf
 ### DOWNLOAD AND INSTALL
 
 # clone id-service
-git clone -b $ID_SERVICE_BRANCH https://github.com/saalfeldlab/id-service
+if ! [ -d id-service ]; then
+  git clone -b $ID_SERVICE_BRANCH https://github.com/saalfeldlab/id-service
+else
+  cd id-service
+  git checkout $ID_SERVICE_BRANCH
+  git pull origin $ID_SERVICE_BRANCH
+  cd ..
+fi
 echo $MAXID > id-service/max_id.txt
 
 # clone and install gala
-git clone -b $GALA_BRANCH https://github.com/jni/gala
+if ! [ -d gala ]; then
+  git clone -b $GALA_BRANCH https://github.com/jni/gala
+else
+  cd gala
+  if ! [ `git rev-parse --verify $GALA_BRANCH` ]; then
+    git fetch origin $GALA_BRANCH
+    git checkout --track origin/$GALA_BRANCH
+  else
+    git checkout $GALA_BRANCH
+    git pull origin $GALA_BRANCH
+  fi
+  cd ..
+fi
 cd gala
 conda env create -n $CONDA_ENV_NAME
 source activate $CONDA_ENV_NAME

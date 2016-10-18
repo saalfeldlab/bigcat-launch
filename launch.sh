@@ -17,6 +17,7 @@ git clone -b $ID_SERVICE_BRANCH https://github.com/saalfeldlab/id-service
 git clone -b $GALA_BRANCH https://github.com/jni/gala
 cd gala
 conda env create -n $CONDA_ENV_NAME
+source activate $CONDA_ENV_NAME
 pip install -e .
 
 ### RUN

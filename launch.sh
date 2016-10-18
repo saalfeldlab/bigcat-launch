@@ -3,6 +3,7 @@ BIGCAT_BRANCH=remote-client
 ID_SERVICE_BRANCH=master
 GALA_BRANCH=easy-launch
 CONDA_ENV_NAME=bigcat-launch
+MAXID=0
 
 ### DOWNLOAD AND INSTALL
 
@@ -12,6 +13,7 @@ CONDA_ENV_NAME=bigcat-launch
 
 # clone id-service
 git clone -b $ID_SERVICE_BRANCH https://github.com/saalfeldlab/id-service
+echo $MAXID > id-service/max_id.txt
 
 # clone and install gala
 git clone -b $GALA_BRANCH https://github.com/jni/gala

@@ -63,6 +63,7 @@ python id-service/server.py &
 ID_SERVICE_PID=$!
 
 # run gala-serve
+unset PYTHONPATH
 gala-serve $VOLUME -f config.json &
 GALA_SERVICE_PID=$!
 

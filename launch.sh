@@ -11,6 +11,7 @@ CONDA_ENV_NAME=bigcat-launch
 # mvn install dependencies
 
 # clone id-service
+git clone -b $ID_SERVICE_BRANCH https://github.com/saalfeldlab/id-service
 
 # clone and install gala
 git clone -b $GALA_BRANCH https://github.com/jni/gala
@@ -21,6 +22,7 @@ pip install -e .
 ### RUN
 
 # run id-service
+python id-service/server.py
 
 # run gala-serve
 

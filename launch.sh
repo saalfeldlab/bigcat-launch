@@ -4,6 +4,7 @@ ID_SERVICE_BRANCH=master
 GALA_BRANCH=easy-launch
 CONDA_ENV_NAME=bigcat-launch
 MAXID=0
+VOLUME=bigcat/data/sample_B_20160708_frags_46_50.hdf
 
 ### DOWNLOAD AND INSTALL
 
@@ -26,8 +27,9 @@ cd ..
 ### RUN
 
 # run id-service
-python id-service/server.py
+python id-service/server.py &
 
 # run gala-serve
+gala-serve sample_B_20160708_frags_46_50.hdf -f config.json &
 
 # run bigcat

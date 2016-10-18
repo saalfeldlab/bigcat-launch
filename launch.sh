@@ -39,7 +39,7 @@ if ! [ $? -eq 0 ]; then
   conda env create -n $CONDA_ENV_NAME
   source activate $CONDA_ENV_NAME
 else
-  conda env update -f environment.yml
+  conda env update -n $CONDA_ENV_NAME -f environment.yml
 fi
 pip install -e .
 cd ..

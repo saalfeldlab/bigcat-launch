@@ -11,7 +11,7 @@ Start bigCAT client, ID service and GALA
 * OpenJDK 8
 
   ```bash
-  sudo apt-get install openjdk8-jkdk
+  sudo apt-get install openjdk-8-jdk
   ```
 * Maven
 

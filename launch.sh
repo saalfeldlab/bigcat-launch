@@ -1,7 +1,7 @@
 
 BIGCAT_BRANCH=master
 ID_SERVICE_BRANCH=master
-GALA_BRANCH=easy-launch
+GALA_BRANCH=quick-features
 CONDA_ENV_NAME=bigcat-launch
 MAXID=0
 VOLUME=bigcat/data/sample_B_20160708_frags_46_50.hdf
@@ -21,7 +21,7 @@ echo $MAXID > id-service/max_id.txt
 
 # clone and install gala
 if ! [ -d gala ]; then
-  git clone -b $GALA_BRANCH https://github.com/jni/gala
+  git clone --depth 50 -b $GALA_BRANCH https://github.com/jni/gala
 else
   cd gala
   if ! [ `git rev-parse --verify $GALA_BRANCH` ]; then
